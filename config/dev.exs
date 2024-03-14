@@ -3,7 +3,7 @@ import Config
 # Configure your database
 config :wabanex, Wabanex.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "root",
   hostname: "localhost",
   database: "wabanex_dev",
   stacktrace: true,
