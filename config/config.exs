@@ -11,6 +11,10 @@ config :wabanex,
   ecto_repos: [Wabanex.Repo],
   generators: [timestamp_type: :utc_datetime]
 
+config :Wabanex, Wabanex.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :wabanex, WabanexWeb.Endpoint,
   url: [host: "localhost"],
