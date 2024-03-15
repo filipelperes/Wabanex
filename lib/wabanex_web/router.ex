@@ -11,6 +11,13 @@ defmodule WabanexWeb.Router do
     get "/", IMCController, :index
   end
 
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphql", Absinthe.Plug, schema: WabanexWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: WabanexWeb.Schema
+  end
+
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:wabanex, :dev_routes) do
     # If you want to use the LiveDashboard in production, you should put
