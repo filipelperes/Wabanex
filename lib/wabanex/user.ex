@@ -1,4 +1,5 @@
 defmodule Wabanex.User do
+  alias Wabanex.Training
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -9,6 +10,8 @@ defmodule Wabanex.User do
     field :email, :string
     field :name, :string
     field :password, :string
+
+    has_one :training, Training
 
     timestamps()
   end
